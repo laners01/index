@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="user-scalable = no, initial-scale = 1, width = device-width">
+    <style>
+        h2{position: fixed; left: 10%;}
+        #pic{position: absolute; left: 10%;top: 20%;float: left;}
+        #bar{position: relative; float: right; right: 10%;display: none;}
+        nav{float: right;}
+        button{background-color: white; border: none;}
+        .btn1{position: relative; font-weight: bold; right: 20%}
+        .btn1:hover{text-shadow: 5px 5px 5px black;}
+        .btn2{position: relative; right: 18%;}
+        .btn2:hover{text-shadow: 5px 5px 5px black;}
+        .btn3{position: relative; right: 16%;}
+        .btn3:hover{text-shadow: 5px 5px 5px black;}
+        #page2{display: none;}
+        #page3{display: none;}
+        #introduce{position: absolute;left: 28%;top: 20%;margin-right: 13%;}
+        #achieve{position: absolute;left: 28%;top: 20%;margin-right: 13%;}
+        #vision{position: absolute;left: 28%;top: 20%;margin-right: 13%;}
+        #menu{background: white; position: fixed; left: 0; top: 0; right: 0; height: 70px; z-index: 5000;}
+        #scroll{display: none;}
+        #scroll:checked ~ .hide{display: block;float: left;}
+        .hide{display: none;}
+        li{list-style-type: none; display: none;background: white;}
+        @media screen and (max-width: 767px){
+            #pic{display: block; width: 80%;height: 500px;text-align: center;z-index: 1;}
+            button{display: none;}
+            #bar{display: block;position: fixed;}
+            #introduce{position: relative; top: 700px;left: 10%; }
+            li{display: block; top: 15px; text-align: right;}           
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        window.onload = function () {
+        var buttons = document.querySelectorAll('button');
+        var button1 = buttons[0];var button2 = buttons[1];var button3 = buttons[2];
+        var imgs = document.querySelectorAll('img');
+        var menu_button = imgs[0];
+        var scrolled_menu = document.querySelectorAll('li');
+        var scrolled_menu1 = scrolled_menu[0];var scrolled_menu2 = scrolled_menu[1];var scrolled_menu3 = scrolled_menu[2];
+
+        menu_button.onclick = function(){
+            var submenu = $(this).next("ul");
+            submenu.slideToggle();
+        }
+        scrolled_menu1.onclick = function(){
+        $('#page1').show();
+        $('#page2').hide();
+        $('#page3').hide();
+        $('.btn1').css('font-weight','bold');
+        $('.btn2').css('font-weight','400');
+        $('.btn3').css('font-weight','400');
+        };
+        scrolled_menu2.onclick = function(){
+        $('#page1').hide();
+        $('#page2').show();
+        $('#page3').hide();
+        $('.btn1').css('font-weight','400');
+        $('.btn2').css('font-weight','bold');
+        $('.btn3').css('font-weight','400');
+        };
+        scrolled_menu3.onclick = function(){
+        $('#page1').hide();
+        $('#page2').hide();
+        $('#page3').show();
+        $('.btn1').css('font-weight','400');
+        $('.btn2').css('font-weight','400');
+        $('.btn3').css('font-weight','bold');
+        };
+        button1.onclick = function(){
+        $('#page1').show();
+        $('#page2').hide();
+        $('#page3').hide();
+        $('.btn1').css('font-weight','bold');
+        $('.btn2').css('font-weight','400');
+        $('.btn3').css('font-weight','400');
+    };
+       button2.onclick = function(){
+        $('#page1').hide();
+        $('#page2').show();
+        $('#page3').hide();
+        $('.btn1').css('font-weight','400');
+        $('.btn2').css('font-weight','bold');
+        $('.btn3').css('font-weight','400');
+       };
+       button3.onclick = function(){
+        $('#page1').hide();
+        $('#page2').hide();
+        $('#page3').show();
+        $('.btn1').css('font-weight','400');
+        $('.btn2').css('font-weight','400');
+        $('.btn3').css('font-weight','bold');
+       };
+    };
+    </script>
+</head>
+<body>
+    <div id="menu">
+        <h2>Ji Sang Geun</h2>
+        <nav>
+            <br>
+            <input id="scroll" type="checkbox">
+            <label for="scroll"><img src="https://github.com/laners01/index/assets/135387335/7e27a611-0d10-4539-9249-c4063f9d1910" id="bar" width =30px></label>
+            <nav class="hide">
+                <br>
+                <li class="btn1">About Me</li>
+                <li class="btn2">What I Did</li>
+                <li class="btn3">What I Want To Do</li>
+            </nav>
+            <button class="btn1">About Me</button>
+            <button class="btn2">What I Did</button>
+            <button class="btn3">What I Want To Do</button>
+        </nav>
+    </div>
+
+    <div id="page1">
+    <img src="https://github.com/laners01/index/assets/135387335/b7612041-f54e-4756-ba06-a1cf5c799581" id="pic" width=15%>
+        <div id="introduce">
+            <h3>Introduce Myself</h3>
+            <p>저는 강원도 태백에서 태어나서 21살까지 태백에서 살면서 초등학교, 중학교, 고등학교를 모두 태백에서 졸업했습니다.
+                그러다 제가 군대에 입대하고 할아버지를 금방 도와드릴 수 있게 부모님의 본가인 경상북도 안동으로 이사를 가게 되었습니다.
+                대학교에는 1학년일 때는 코로나로 인해 아쉽게 대학생활을 잘 하지 못했고 지금이 사실상 첫 대학생활입니다.
+                처음 대면수업을 하게 되었을 때에는 살짝 두근두근하고 설레는 기분이 있었지만 지금은 그저 빨리 종강했으면 하는 마음으로
+                살아가고 있는 평범한 대학생이 되었습니다.
+            </p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt,
+             illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt,
+             illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+        </div>
+    </div>
+    <div id="page2">
+        <div id="achieve">
+            <h3>What I Did</h3>
+            <p>합기도 2단 단증</p>
+            <p>태권도 1단 단증</p>
+            <p>강원대학교 컴퓨터 공학과 입학</p>
+            <p>육군 병장 만기 전역</p>
+            <p>한국사능력검정시험 1급 자격증 취득</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt, illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt, illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt, illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt, illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+        </div>
+    </div>
+
+    <div id="page3">
+        <div id="vision">
+            <h3>What I Will Do</h3>
+            <p>아직까지는 명확하게 무엇을 하고 싶다는 생각이 들지 않습니다. 지금도 여러가지 수업들을 들어가면서
+                제가 무엇을 하고 싶은지 찾고 있는 단계라고 생각합니다. 기본적으로 대학에 처음 들어올 때는 인디게임
+                개발자가 되는 것이 제 목표였는데 이것저것 배워갈수록 하고싶은게 많아서 고민이 됩니다.
+                올해가 끝나기 전에는 기본적으로 제가 하고 싶은 심화 전공을 찾는 것이 제 목표가 될 것 같습니다.  
+            </p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt, illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt, illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt, illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Magnam perspiciatis voluptate expedita odit incidunt neque a tenetur quos nesciunt, illum consectetur vel deserunt atque! Modi iste iusto quo aut dolore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Quibusdam impedit cupiditate soluta facilis quasi ullam at! 
+            Vero non provident animi exercitationem consequuntur architecto quasi. 
+            Itaque necessitatibus aperiam repudiandae sed saepe.</p>
+        </div>
+    </div>
+</body>
